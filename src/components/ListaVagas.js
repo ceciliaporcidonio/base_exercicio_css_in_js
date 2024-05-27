@@ -1,15 +1,18 @@
 // src/components/ListaVagas.js
+import React from 'react';
 import styled from 'styled-components';
 import Vaga from './Vaga';
 
 const ListaVagasWrapper = styled.div`
-  // Adicione seu CSS aqui
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `;
 
 const ListaVagas = ({ vagas }) => (
   <ListaVagasWrapper>
     {vagas.map((vaga, index) => (
-      <Vaga key={index} vaga={vaga} />
+      <Vaga key={index} titulo={vaga.titulo} descricao={vaga.descricao} />
     ))}
   </ListaVagasWrapper>
 );
